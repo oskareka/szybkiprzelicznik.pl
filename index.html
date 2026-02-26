@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Darmowy multitool online: przelicznik jednostek, kalkulator VAT, aktualne kursy walut, strefy czasowe i generator kodów QR. Wszystko w jednym miejscu!">
-    <meta name="keywords" content="kalkulator vat, przelicznik jednostek, kursy walut, generator qr, strefy czasowe, narzędzia online, kalkulator">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://szybkiprzelicznik.pl/">
-    <title>Szybkiprzelicznik.pl</title>
+    <title>Szybkiprzelicznik.pl - Nowoczesny Multitool</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6570115266710898" crossorigin="anonymous"></script>
     <style>
         :root {
             --bg-color: #f4f7f6;
@@ -44,16 +40,11 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        
         body { background-color: var(--bg-color); color: var(--text-color); display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding: 20px; }
-        
         .multitool-wrapper { background: var(--container-bg); padding: 2.5rem; border-radius: 16px; box-shadow: var(--shadow); width: 100%; max-width: 650px; position: relative; margin-bottom: 20px; }
-        
         .theme-toggle { position: absolute; top: 25px; right: 25px; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-color); }
-        
         h1 { text-align: center; margin-bottom: 1rem; font-weight: 700; }
 
-        /* --- MIEJSCE NA REKLAMĘ (Placeholder) --- */
         .ad-container { background: var(--tab-hover); border: 1px dashed var(--icon-color); border-radius: 8px; text-align: center; padding: 20px; margin: 15px 0; color: var(--icon-color); font-size: 0.85rem; }
 
         .tabs { display: flex; gap: 5px; margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; overflow-x: auto; scrollbar-width: thin; }
@@ -68,33 +59,22 @@
         .control-group { margin-bottom: 1.5rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; opacity: 0.9; }
         select, input { width: 100%; padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background-color: var(--input-bg); color: var(--text-color); }
-        select:focus, input:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); }
         
         .conversion-area { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
         .input-block { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
         .swap-icon { font-size: 1.5rem; color: var(--icon-color); margin-top: 1.5rem; }
         
         .btn-primary { width: 100%; padding: 14px; background-color: var(--primary-color); color: #fff; border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; margin-top: 10px; }
-        .btn-primary:hover { background-color: var(--primary-hover); }
-        
-        #qr-code-container { display: flex; justify-content: center; margin-top: 20px; padding: 20px; background: var(--input-bg); border: 1px dashed var(--border-color); border-radius: 8px; min-height: 220px; align-items: center; }
-
         .vat-result-box { background-color: var(--tab-active-bg); padding: 15px; border-radius: 8px; margin-top: 15px; color: var(--text-color); border: 1px solid var(--border-color); }
         .vat-result-box p { display: flex; justify-content: space-between; margin: 8px 0; font-size: 1.05rem; }
         .vat-result-box strong { color: var(--tab-active-text); font-size: 1.2rem; }
 
-        /* --- STOPKA PRAWNA --- */
         .site-footer { text-align: center; font-size: 0.85rem; color: var(--icon-color); margin-top: auto; }
         .site-footer a { color: var(--primary-color); text-decoration: none; cursor: pointer; margin: 0 10px; }
-        .site-footer a:hover { text-decoration: underline; }
 
-        /* --- MODALE (Regulamin / Polityka) --- */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-bg); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
         .modal-content { background: var(--container-bg); color: var(--text-color); width: 100%; max-width: 600px; max-height: 80vh; overflow-y: auto; padding: 2rem; border-radius: 12px; position: relative; }
         .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--text-color); }
-        .modal-content h2 { margin-bottom: 15px; }
-        .modal-content h3 { margin: 15px 0 5px 0; font-size: 1rem; }
-        .modal-content p { font-size: 0.9rem; line-height: 1.5; margin-bottom: 10px; opacity: 0.9; }
 
         @media (max-width: 500px) { .conversion-area { flex-direction: column; } .swap-icon { transform: rotate(90deg); margin: 0.5rem 0; } .multitool-wrapper { padding: 1.5rem; } }
     </style>
@@ -105,9 +85,7 @@
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙</button>
         <h1>Szybkiprzelicznik.pl</h1>
 
-        <div class="ad-container">
-            Miejsce na reklamę AdSense (np. baner poziomy)<br>
-            </div>
+        <div class="ad-container">Miejsce na reklamę AdSense</div>
         
         <div class="tabs">
             <button class="tab-btn active" onclick="switchTab('tool-units', this)">Jednostki</button>
@@ -119,7 +97,7 @@
 
         <div id="tool-units" class="tool-section active">
             <div class="control-group">
-                <label>Wybierz kategorię:</label>
+                <label>Kategoria:</label>
                 <select id="category-select"></select>
             </div>
             <div class="conversion-area">
@@ -130,6 +108,7 @@
         </div>
 
         <div id="tool-currency" class="tool-section">
+            <div class="control-group"><p style="font-size: 0.8rem; opacity: 0.7;">Kursy aktualizowane na żywo z API.</p></div>
             <div class="conversion-area">
                 <div class="input-block"><label>Kwota:</label><input type="number" id="curr-input" value="100" step="any"><select id="curr-from"></select></div>
                 <div class="swap-icon">⇌</div>
@@ -138,39 +117,22 @@
         </div>
 
         <div id="tool-vat" class="tool-section">
-            <div class="control-group">
-                <label>Kwota bazowa (PLN):</label>
-                <input type="number" id="vat-amount" value="100" step="0.01">
-            </div>
+            <div class="control-group"><label>Kwota bazowa (PLN):</label><input type="number" id="vat-amount" value="100" step="0.01"></div>
             <div class="conversion-area">
-                <div class="input-block">
-                    <label>Typ kwoty:</label>
-                    <select id="vat-type">
-                        <option value="netto">Kwota Netto (+ podatek)</option>
-                        <option value="brutto">Kwota Brutto (- podatek)</option>
-                    </select>
-                </div>
-                <div class="input-block">
-                    <label>Stawka VAT:</label>
-                    <select id="vat-rate">
-                        <option value="0.23">23%</option>
-                        <option value="0.08">8%</option>
-                        <option value="0.05">5%</option>
-                        <option value="0.00">0%</option>
-                    </select>
-                </div>
+                <div class="input-block"><label>Typ:</label><select id="vat-type"><option value="netto">Netto (+VAT)</option><option value="brutto">Brutto (-VAT)</option></select></div>
+                <div class="input-block"><label>Stawka:</label><select id="vat-rate"><option value="0.23">23%</option><option value="0.08">8%</option><option value="0.05">5%</option><option value="0.00">0%</option></select></div>
             </div>
             <div class="vat-result-box">
-                <p>Wartość Netto: <strong id="res-netto">100.00 PLN</strong></p>
-                <p>Kwota VAT: <strong id="res-vat">23.00 PLN</strong></p>
-                <p>Wartość Brutto: <strong id="res-brutto">123.00 PLN</strong></p>
+                <p>Netto: <strong id="res-netto">100.00 PLN</strong></p>
+                <p>VAT: <strong id="res-vat">23.00 PLN</strong></p>
+                <p>Brutto: <strong id="res-brutto">123.00 PLN</strong></p>
             </div>
         </div>
 
         <div id="tool-time" class="tool-section">
             <div class="control-group"><label>Z lokalizacji:</label><select id="time-from-zone"></select></div>
             <div class="control-group"><label>Godzina:</label><input type="time" id="time-input" value="12:00"></div>
-            <div class="control-group" style="margin-top: 20px;"><label>Do lokalizacji:</label><select id="time-to-zone" style="margin-bottom: 10px;"></select><input type="text" id="time-output" readonly style="background-color: var(--tab-active-bg); color: var(--tab-active-text); font-weight: bold;"></div>
+            <div class="control-group" style="margin-top: 20px;"><label>Do lokalizacji:</label><select id="time-to-zone"></select><input type="text" id="time-output" readonly style="background-color: var(--tab-active-bg); color: var(--tab-active-text); font-weight: bold; margin-top:10px;"></div>
         </div>
 
         <div id="tool-qr" class="tool-section">
@@ -181,10 +143,7 @@
             <div id="qr-code-container"><span style="color: var(--icon-color);">Kod pojawi się tutaj</span></div>
         </div>
         
-        <div class="ad-container">
-            Miejsce na reklamę AdSense (np. responsywna)<br>
-            </div>
-
+        <div class="ad-container">Miejsce na reklamę AdSense</div>
     </div>
 
     <div class="site-footer">
@@ -193,25 +152,8 @@
         <a onclick="openModal('modal-privacy')">Polityka Prywatności</a>
     </div>
 
-    <div id="modal-terms" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal-terms')">&times;</button>
-            <h2>Regulamin korzystania z serwisu</h2>
-            <p><strong>1. Postanowienia ogólne</strong><br>Niniejszy regulamin określa zasady korzystania z darmowych narzędzi internetowych dostępnych na stronie. Użytkownik korzystając ze strony, akceptuje warunki regulaminu.</p>
-            <p><strong>2. Odpowiedzialność</strong><br>Narzędzia dostarczane są w formie "tak jak jest" (as is). Twórca strony dokłada wszelkich starań, aby obliczenia (np. kursy walut, jednostki) były poprawne, jednak nie ponosi odpowiedzialności za ewentualne straty finansowe lub błędy wynikające z ich zastosowania w środowisku komercyjnym. Wyniki mają charakter informacyjny.</p>
-            <p><strong>3. Ochrona własności intelektualnej</strong><br>Kod strony, układ narzędzi oraz design są własnością intelektualną właściciela witryny. Kopiowanie aplikacji w celach zarobkowych bez zgody jest zabronione.</p>
-        </div>
-    </div>
-
-    <div id="modal-privacy" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('modal-privacy')">&times;</button>
-            <h2>Polityka Prywatności i Cookies</h2>
-            <p><strong>1. Zbieranie danych</strong><br>Aplikacja działa głównie w środowisku przeglądarki (client-side) i nie wysyła wpisywanych przez Ciebie tekstów (np. treści kodów QR) na nasze serwery.</p>
-            <p><strong>2. Pliki Cookies (Ciasteczka)</strong><br>Używamy plików cookies m.in. w celu zapamiętania preferencji motywu (jasny/ciemny) oraz w celach statystycznych i analitycznych.</p>
-            <p><strong>3. Reklamy Google AdSense</strong><br>Na tej stronie mogą wyświetlać się reklamy dostarczane przez sieć Google AdSense. Dostawcy zewnętrzni, w tym Google, używają plików cookie do wyświetlania reklam na podstawie poprzednich odwiedzin użytkownika w tej lub w innych witrynach. Użytkownicy mogą zrezygnować ze spersonalizowanych reklam, odwiedzając stronę Ustawienia reklam Google.</p>
-        </div>
-    </div>
+    <div id="modal-terms" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal-terms')">&times;</button><h2>Regulamin</h2><p>Treść regulaminu...</p></div></div>
+    <div id="modal-privacy" class="modal-overlay"><div class="modal-content"><button class="modal-close" onclick="closeModal('modal-privacy')">&times;</button><h2>Polityka Prywatności</h2><p>Treść polityki...</p></div></div>
 
     <script>
         /* --- TRYB CIEMNY --- */
@@ -230,47 +172,113 @@
         /* --- MODALE --- */
         function openModal(id) { document.getElementById(id).style.display = 'flex'; }
         function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-        window.onclick = function(event) { if(event.target.classList.contains('modal-overlay')) { event.target.style.display = "none"; } }
+        window.onclick = function(e) { if(e.target.classList.contains('modal-overlay')) e.target.style.display = "none"; }
 
-        /* --- 1. JEDNOSTKI --- */
+        /* --- 1. JEDNOSTKI (PEŁNA BAZA) --- */
         const conversionData = {
-            length: { name: "Długość", type: "multiplier", units: { meter: { name: "Metr", factor: 1 }, kilometer: { name: "Kilometr", factor: 1000 }, inch: { name: "Cal", factor: 0.0254 } } },
-            mass: { name: "Masa", type: "multiplier", units: { gram: { name: "Gram", factor: 0.001 }, kilogram: { name: "Kilogram", factor: 1 }, pound: { name: "Funt", factor: 0.453592 } } }
-            /* Zostawiam krótszy słownik dla czytelności kodu, wklej tu swój pełen słownik conversionData! */
+            length: { name: "Długość", type: "multiplier", units: { millimeter: { name: "Milimetr", factor: 0.001 }, centimeter: { name: "Centymetr", factor: 0.01 }, meter: { name: "Metr", factor: 1 }, kilometer: { name: "Kilometr", factor: 1000 }, inch: { name: "Cal", factor: 0.0254 }, foot: { name: "Stopa", factor: 0.3048 }, yard: { name: "Jard", factor: 0.9144 }, mile: { name: "Mila", factor: 1609.344 } } },
+            mass: { name: "Masa", type: "multiplier", units: { milligram: { name: "Miligram", factor: 0.000001 }, gram: { name: "Gram", factor: 0.001 }, kilogram: { name: "Kilogram", factor: 1 }, metricTon: { name: "Tona", factor: 1000 }, ounce: { name: "Uncja", factor: 0.0283495 }, pound: { name: "Funt", factor: 0.453592 } } },
+            temperature: { name: "Temperatura", type: "formula", units: { celsius: { name: "Celsjusz" }, fahrenheit: { name: "Fahrenheit" }, kelvin: { name: "Kelvin" } } },
+            area: { name: "Powierzchnia", type: "multiplier", units: { sqMeter: { name: "Metr kw.", factor: 1 }, hectare: { name: "Hektar", factor: 10000 }, sqKilometer: { name: "Kilometr kw.", factor: 1000000 }, acre: { name: "Akr", factor: 4046.86 } } },
+            volume: { name: "Objętość", type: "multiplier", units: { milliliter: { name: "Mililitr", factor: 0.001 }, liter: { name: "Litr", factor: 1 }, cubicMeter: { name: "Metr sześc.", factor: 1000 }, gallonUS: { name: "Galon (US)", factor: 3.78541 } } },
+            speed: { name: "Prędkość", type: "multiplier", units: { meterPerSecond: { name: "m/s", factor: 1 }, kilometerPerHour: { name: "km/h", factor: 0.277778 }, milePerHour: { name: "mph", factor: 0.44704 }, knot: { name: "Węzeł", factor: 0.514444 } } },
+            pressure: { name: "Ciśnienie", type: "multiplier", units: { pascal: { name: "Paskal (Pa)", factor: 1 }, bar: { name: "Bar", factor: 100000 }, atmosphere: { name: "Atmosfera", factor: 101325 }, psi: { name: "PSI", factor: 6894.76 } } },
+            energy: { name: "Energia", type: "multiplier", units: { joule: { name: "Dżul", factor: 1 }, calorie: { name: "Kaloria", factor: 4.184 }, kilowattHour: { name: "kWh", factor: 3600000 } } },
+            dataStorage: { name: "Dane (Bajty)", type: "multiplier", units: { byte: { name: "Bajt", factor: 1 }, kilobyte: { name: "KB", factor: 1000 }, megabyte: { name: "MB", factor: 1000000 }, gigabyte: { name: "GB", factor: 1000000000 }, terabyte: { name: "TB", factor: 1000000000000 } } },
+            dataRate: { name: "Przesył (Bit/s)", type: "multiplier", units: { mbps: { name: "Mbps", factor: 1000000 }, gbps: { name: "Gbps", factor: 1000000000 } } },
+            typography: { name: "Typografia", type: "multiplier", units: { point: { name: "Punkt (pt)", factor: 1 }, pixel: { name: "Piksel (px)", factor: 0.75 }, em: { name: "em", factor: 12 } } },
+            angle: { name: "Kąty", type: "multiplier", units: { degree: { name: "Stopień", factor: 1 }, radian: { name: "Radian", factor: 57.2958 } } }
         };
-        const catSel = document.getElementById('category-select'), fromSel = document.getElementById('from-unit'), toSel = document.getElementById('to-unit'), inVal = document.getElementById('input-value'), outVal = document.getElementById('output-value');
-        function initUnits() { for (const [k, c] of Object.entries(conversionData)) catSel.appendChild(new Option(c.name, k)); catSel.onchange = updUnits; fromSel.onchange = calcUnits; toSel.onchange = calcUnits; inVal.oninput = calcUnits; updUnits(); }
-        function updUnits() { const u = conversionData[catSel.value].units; fromSel.innerHTML = ''; toSel.innerHTML = ''; for (const [k, v] of Object.entries(u)) { fromSel.appendChild(new Option(v.name, k)); toSel.appendChild(new Option(v.name, k)); } if(toSel.options.length>1) toSel.selectedIndex=1; calcUnits(); }
-        function calcUnits() { const c = conversionData[catSel.value], f = fromSel.value, t = toSel.value, v = parseFloat(inVal.value); if (isNaN(v)) return outVal.value=''; if (f===t) return outVal.value=v; outVal.value = parseFloat((v * (c.units[f].factor / c.units[t].factor)).toFixed(8)); }
+
+        const tempFormulas = {
+            celsius: { fahrenheit: (c) => (c * 9/5) + 32, kelvin: (c) => c + 273.15 },
+            fahrenheit: { celsius: (f) => (f - 32) * 5/9, kelvin: (f) => (f - 32) * 5/9 + 273.15 },
+            kelvin: { celsius: (k) => k - 273.15, fahrenheit: (k) => (k - 273.15) * 9/5 + 32 }
+        };
+
+        const catSel = document.getElementById('category-select'), fUnit = document.getElementById('from-unit'), tUnit = document.getElementById('to-unit'), iVal = document.getElementById('input-value'), oVal = document.getElementById('output-value');
+        function initUnits() { for (let k in conversionData) catSel.appendChild(new Option(conversionData[k].name, k)); catSel.onchange = updUnits; fUnit.onchange = tUnit.onchange = iVal.oninput = calcUnits; updUnits(); }
+        function updUnits() { const u = conversionData[catSel.value].units; fUnit.innerHTML = tUnit.innerHTML = ''; for (let k in u) { fUnit.appendChild(new Option(u[k].name, k)); tUnit.appendChild(new Option(u[k].name, k)); } tUnit.selectedIndex = 1; calcUnits(); }
+        function calcUnits() {
+            const cat = conversionData[catSel.value], v = parseFloat(iVal.value), f = fUnit.value, t = tUnit.value;
+            if (isNaN(v)) return oVal.value = '';
+            if (cat.type === 'multiplier') oVal.value = (v * (cat.units[f].factor / cat.units[t].factor)).toFixed(6);
+            else oVal.value = f === t ? v : tempFormulas[f][t](v).toFixed(2);
+        }
         initUnits();
 
-        /* --- 2. WALUTY --- */
-        const currList = {"PLN": "PLN", "USD": "USD", "EUR": "EUR", "GBP": "GBP"};
-        const cFrom = document.getElementById('curr-from'), cTo = document.getElementById('curr-to'), cIn = document.getElementById('curr-input'), cOut = document.getElementById('curr-output');
+        /* --- 2. WALUTY (PEŁNA LISTA) --- */
+        const currList = { "PLN": "Polski Złoty", "USD": "Dolar USA", "EUR": "Euro", "GBP": "Funt Brytyjski", "CHF": "Frank Szwajcarski", "CNY": "Juan Chiński", "JPY": "Jen Japoński", "CZK": "Korona Czeska", "UAH": "Hrywna", "AUD": "Dolar Australijski", "CAD": "Dolar Kanadyjski", "NOK": "Korona Norweska" };
+        const cIn = document.getElementById('curr-input'), cOut = document.getElementById('curr-output'), cF = document.getElementById('curr-from'), cT = document.getElementById('curr-to');
         let rates = {};
-        async function initCurr() { for(let k in currList){ cFrom.appendChild(new Option(k,k)); cTo.appendChild(new Option(k,k)); } cFrom.value="PLN"; cTo.value="USD"; try { const r = await fetch('https://open.er-api.com/v6/latest/USD'); const d = await r.json(); rates = d.rates; calcCurr(); } catch(e){} }
-        function calcCurr() { if(!rates.PLN || isNaN(cIn.value)) return; cOut.value = ((cIn.value / rates[cFrom.value]) * rates[cTo.value]).toFixed(2); }
-        cIn.oninput = calcCurr; cFrom.onchange = calcCurr; cTo.onchange = calcCurr; initCurr();
+        async function initCurr() { for(let k in currList){ cF.appendChild(new Option(currList[k],k)); cT.appendChild(new Option(currList[k],k)); } cF.value="PLN"; cT.value="USD"; try { const r = await fetch('https://open.er-api.com/v6/latest/USD'); rates = (await r.json()).rates; calcCurr(); } catch(e){} }
+        function calcCurr() { if(!rates.PLN || isNaN(cIn.value)) return; cOut.value = ((cIn.value / rates[cF.value]) * rates[cT.value]).toFixed(2); }
+        cIn.oninput = cF.onchange = cT.onchange = calcCurr; initCurr();
 
-        /* --- 3. KALKULATOR VAT --- */
-        const vAmt = document.getElementById('vat-amount'), vType = document.getElementById('vat-type'), vRate = document.getElementById('vat-rate');
+        /* --- 3. VAT --- */
+        const vA = document.getElementById('vat-amount'), vT = document.getElementById('vat-type'), vR = document.getElementById('vat-rate');
         function calcVAT() {
-            let amount = parseFloat(vAmt.value) || 0, rate = parseFloat(vRate.value), isNetto = vType.value === 'netto';
-            let netto = isNetto ? amount : amount / (1 + rate);
-            let brutto = isNetto ? amount * (1 + rate) : amount;
-            let vat = brutto - netto;
-            document.getElementById('res-netto').innerText = netto.toFixed(2) + " PLN";
-            document.getElementById('res-vat').innerText = vat.toFixed(2) + " PLN";
-            document.getElementById('res-brutto').innerText = brutto.toFixed(2) + " PLN";
+            let a = parseFloat(vA.value) || 0, r = parseFloat(vR.value), n = vT.value==='netto' ? a : a/(1+r), b = vT.value==='netto' ? a*(1+r) : a;
+            document.getElementById('res-netto').innerText = n.toFixed(2) + " PLN";
+            document.getElementById('res-vat').innerText = (b-n).toFixed(2) + " PLN";
+            document.getElementById('res-brutto').innerText = b.toFixed(2) + " PLN";
         }
-        vAmt.oninput = calcVAT; vType.onchange = calcVAT; vRate.onchange = calcVAT; calcVAT();
+        vA.oninput = vT.onchange = vR.onchange = calcVAT; calcVAT();
 
-        /* --- 4. STREFY --- */
+        /* --- 4. STREFY (ROZBUDOWANE) --- */
+const tzl = { 
+            // EUROPA
+            "Europe/Warsaw": "Polska (Warszawa)",
+            "Europe/London": "Wlk. Brytania (Londyn)",
+            "Europe/Berlin": "Niemcy (Berlin)",
+            "Europe/Paris": "Francja (Paryż)",
+            "Europe/Rome": "Włochy (Rzym)",
+            "Europe/Madrid": "Hiszpania (Madryt)",
+            "Europe/Kyiv": "Ukraina (Kijów)",
+            "Europe/Moscow": "Rosja (Moskwa)",
+            "Europe/Istanbul": "Turcja (Stambuł)",
+            
+            // AMERYKA PÓŁNOCNA
+            "America/New_York": "USA (Nowy Jork - EST)",
+            "America/Chicago": "USA (Chicago - CST)",
+            "America/Denver": "USA (Denver - MST)",
+            "America/Los_Angeles": "USA (Los Angeles - PST)",
+            "America/Phoenix": "USA (Arizona)",
+            "America/Toronto": "Kanada (Toronto)",
+            "America/Mexico_City": "Meksyk (Meksyk)",
+            "Pacific/Honolulu": "Hawaje (Honolulu)",
+            
+            // AMERYKA POŁUDNIOWA
+            "America/Sao_Paulo": "Brazylia (São Paulo)",
+            "America/Buenos_Aires": "Argentyna (Buenos Aires)",
+            "America/Santiago": "Chile (Santiago)",
+            
+            // AZJA
+            "Asia/Tokyo": "Japonia (Tokio)",
+            "Asia/Shanghai": "Chiny (Szanghaj)",
+            "Asia/Hong_Kong": "Hong Kong",
+            "Asia/Singapore": "Singapur",
+            "Asia/Bangkok": "Tajlandia (Bangkok)",
+            "Asia/Seoul": "Korea Płd. (Seul)",
+            "Asia/Dubai": "ZEA (Dubaj)",
+            "Asia/Kolkata": "Indie (Kalkuta)",
+            "Asia/Riyadh": "Arabia Saudyjska (Rijad)",
+            
+            // AUSTRALIA I OCEANIA
+            "Australia/Sydney": "Australia (Sydney)",
+            "Australia/Perth": "Australia (Perth)",
+            "Pacific/Auckland": "Nowa Zelandia (Auckland)",
+            
+            // AFRYKA
+            "Africa/Cairo": "Egipt (Kair)",
+            "Africa/Johannesburg": "RPA (Johannesburg)",
+            "Africa/Nairobi": "Kenia (Nairobi)",
+            "Africa/Lagos": "Nigeria (Lagos)"
+        };
         const tzF = document.getElementById('time-from-zone'), tzT = document.getElementById('time-to-zone'), tI = document.getElementById('time-input'), tO = document.getElementById('time-output');
-        const tzl = {"Europe/Warsaw":"Polska", "America/New_York":"Nowy Jork", "Asia/Shanghai":"Chiny"};
         function initTz() { for(let k in tzl){ tzF.appendChild(new Option(tzl[k],k)); tzT.appendChild(new Option(tzl[k],k)); } tzF.value="Europe/Warsaw"; tzT.value="America/New_York"; calcTz(); }
-        function calcTz() { if(!tI.value) return; const [h,m] = tI.value.split(':'); let d = new Date(); d.setHours(h,m,0,0); let sd = new Date(d.toLocaleString("en-US",{timeZone:tzF.value})); let td = new Date(d.getTime() + (d.getTime()-sd.getTime())); tO.value = td.toLocaleTimeString("pl-PL",{timeZone:tzT.value, hour:'2-digit', minute:'2-digit'}); }
-        tI.oninput = calcTz; tzF.onchange = calcTz; tzT.onchange = calcTz; initTz();
+        function calcTz() { if(!tI.value) return; const [h,m] = tI.value.split(':'); let d = new Date(); d.setHours(h,m,0,0); let sd = new Date(d.toLocaleString("en-US",{timeZone:tzF.value})); let td = new Date(d.getTime() + (d.getTime()-sd.getTime())); tO.value = td.toLocaleTimeString("pl-PL",{timeZone:tzT.value, hour:'2-digit', minute:'2-digit'}) + " (Czas lokalny)"; }
+        tI.oninput = tzF.onchange = tzT.onchange = calcTz; initTz();
 
         /* --- 5. QR --- */
         function generateQR() {
